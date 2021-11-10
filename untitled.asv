@@ -6,12 +6,11 @@ Nt=100;
 NA=100;
 NV=150;
 phi=pi/2;
-alpha=0.05;
+alpha=0.1;
 delta=2*sqrt(log(2))/alpha;
 loop=1;
 iii=1;
-Vs=(0:0.1:2) *J;
-for V= Vs
+for V= (0:0.1:2) *J
     
     psi0=GaussianState(N,NA,phi,delta);
     H=Hamilton(N,J,loop);
@@ -43,10 +42,7 @@ for V= Vs
     %fprintf('T=%f\n',T)
     iii=iii+1;
 end
-scatter(Vs,T)
-hold on
-plot(Vs,4./(4+(Vs/J).^2))
-hold off
+scatter
 % figure(1)
 % plotpsi(psi,t,N)
 % figure(2)
