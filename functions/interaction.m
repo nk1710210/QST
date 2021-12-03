@@ -1,5 +1,5 @@
 function H = interaction(H, i, j, J)
-    %在哈密顿量H中增加ij两粒子间的相互作用，强度为J
+    %H_ij=J, H_ji=J*
     arguments
         H (:, :)
         i int16
@@ -7,7 +7,7 @@ function H = interaction(H, i, j, J)
         J (1, 1) = 1
     end
 
-    H(i, j) = H(i, j) + J;
-    H(j, i) = H(j, i) + conj(J);
+    H(i, j) = J;
+    H(j, i) = conj(J);
 
 end
